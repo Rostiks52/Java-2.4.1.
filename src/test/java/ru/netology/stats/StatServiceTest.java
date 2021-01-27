@@ -15,11 +15,11 @@ public class StatServiceTest {
     }
 
     @Test
-    public void shouldCalculateMedSumSell() {
+    public void shouldCalculateAversge() {
         StatService service = new StatService();
         int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.CalcMedSumSell(values);
+        int actual = service.average(values);
         assertEquals(expected, actual);
     }
 
@@ -38,6 +38,23 @@ public class StatServiceTest {
         int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 9;
         int actual = service.FindMinMonth(values);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void shouldCountMoreThenAverage() {
+        StatService service = new StatService();
+        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+        int actual = service.moreThenAverage(values);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldCountLessThenAverage() {
+        StatService service = new StatService();
+        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+        int actual = service.lessThenAverage(values);
         assertEquals(expected, actual);
     }
 }

@@ -9,7 +9,7 @@ public class StatService {
         return sumsell;
     }
 
-    public int CalcMedSumSell(int[] values) {
+    public int average(int[] values) {
 
         int sumsell = 0;
         for (int value : values) {
@@ -31,6 +31,7 @@ public class StatService {
         }
         return monthNumber;
     }
+
     public int FindMinMonth(int[] values) {
         int monthNumber = 0;
         int min = values[0];
@@ -43,4 +44,28 @@ public class StatService {
         }
         return monthNumber;
     }
- }
+
+    public int moreThenAverage(int[] values) {
+        int average = average(values);
+        int count = 0;
+        for (int value : values) {
+            if (value > average) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int lessThenAverage(int[] values) {
+        int average = average(values);
+
+        int count = 0;
+
+        for (int value : values) {
+            if (value < average) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
