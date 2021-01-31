@@ -10,12 +10,12 @@ public class StatServiceTest {
         StatService service = new StatService();
         int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-        int actual = service.CalcSumSell(values);
+        int actual = service.calcSumSell(values);
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldCalculateAversge() {
+    public void shouldCalculateAverage() {
         StatService service = new StatService();
         int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
